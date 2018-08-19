@@ -349,7 +349,7 @@ else
 	echo "   1) 2048 bits (fastest)"
 	echo "   2) 3072 bits (recommended, best compromise)"
 	echo "   3) 4096 bits (most secure)"
-	echo "   3) 6144 bits (future proof)"
+	echo "   4) 6144 bits (future proof)"
 	until [[ "$DH_KEY_SIZE" =~ ^[0-9]+$ ]] && [ "$DH_KEY_SIZE" -ge 1 -a "$DH_KEY_SIZE" -le 4 ]; do
 		read -rp "DH key size [1-4]: " -e -i 2 DH_KEY_SIZE
 	done
@@ -363,7 +363,7 @@ else
 		3)
 		DH_KEY_SIZE="4096"
 		;;
-		3)
+		4)
 		DH_KEY_SIZE="6144"
 		;;
 	esac
@@ -372,7 +372,7 @@ else
 	echo "   1) 2048 bits (fastest)"
 	echo "   2) 3072 bits (recommended, best compromise)"
 	echo "   3) 4096 bits (most secure)"
-	echo "   3) 6144 bits (future proof)"
+	echo "   4) 6144 bits (future proof)"
 	until [[ "$RSA_KEY_SIZE" =~ ^[0-9]+$ ]] && [ "$RSA_KEY_SIZE" -ge 1 -a "$RSA_KEY_SIZE" -le 4 ]; do
 		read -rp "RSA key size [1-4]: " -e -i 2 RSA_KEY_SIZE
 	done
