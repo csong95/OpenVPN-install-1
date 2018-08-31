@@ -775,11 +775,6 @@ remote-cert-tls server
 verify-x509-name $SERVER_NAME name
 auth SHA256
 auth-nocache
-client-cert-not-required
-username-as-common-name
-plugin /usr/share/openvpn/plugin/lib/openvpn-auth-pam.so /etc/pam.d/login
-mkdir /etc/openvpn/tmp
-chmod 777 /etc/openvpn/tmp
 $CIPHER
 tls-client
 tls-version-min 1.2
