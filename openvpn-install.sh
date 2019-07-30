@@ -300,8 +300,8 @@ else
 	echo "   8) Yandex Basic (Russia)"
 	echo "   9) AdGuard DNS (Russia)"
 	echo "   10) AdGuard & Cloudflare DNS"
-	until [[ "$DNS" =~ ^[0-10]+$ ]] && [ "$DNS" -ge 1 -a "$DNS" -le 10 ]; do
-		read -rp "DNS [1-10]: " -e -i 1 DNS
+	until [[ "$DNS" =~ ^[0-9]+$ ]] && [ "$DNS" -ge 1 -a "$DNS" -le 9 ]; do
+		read -rp "DNS [1-9]: " -e -i 2 DNS
 	done
 	echo ""
 	echo "See https://github.com/Angristan/OpenVPN-install#encryption to learn more about "
@@ -632,10 +632,6 @@ ifconfig-pool-persist ipp.txt" >> /etc/openvpn/server.conf
 		9) # AdGuard DNS
 		echo 'push "dhcp-option DNS 176.103.130.130"' >> /etc/openvpn/server.conf
 		echo 'push "dhcp-option DNS 176.103.130.131"' >> /etc/openvpn/server.conf
-		;;
-		10) # AdGuard & CloudFlare DNS
-		echo 'push "dhcp-option DNS 176.103.130.130"' >> /etc/openvpn/server.conf
-		echo 'push "dhcp-option DNS 1.1.1.1"' >> /etc/openvpn/server.conf
 		;;
 	esac
 echo 'push "redirect-gateway def1 bypass-dhcp" ' >> /etc/openvpn/server.conf
